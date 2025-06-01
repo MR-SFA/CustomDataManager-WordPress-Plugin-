@@ -17,6 +17,9 @@ require_once plugin_dir_path(__FILE__) . 'includes/class-rest-api.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-database.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-validation.php';
 
+// Initialize plugin after WordPress is fully loaded
+add_action('plugins_loaded', 'init_custom_data_manager');
+
 // Initialize plugin classes
 new SamiDataManager_Post_Type();
 new SamiDataManager_REST_API();
